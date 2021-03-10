@@ -1,0 +1,25 @@
+<h1>{{ helloWorld }}</h1>
+<br/>
+<div>
+<input [style.color]="btnRed" type="text" id="itemId" value={{helloWorld}} #Ref>
+<br/>
+<button [ngClass]="btnSytle" (click)="clickFun(Ref.value)">{{helloWorld}}</button>
+</div>
+<br/>
+<input type="text" [(ngModel)]="mailAddress">
+<br/>
+{{mailAddress}}
+
+<h2>{{name | lowercase}}</h2>
+<h2>{{name | uppercase}}</h2>
+<h2>{{title | titlecase}}</h2>
+<h2>{{obj | json}}</h2>
+<h2>{{number | currency}}</h2>
+
+<input placeholder="search" [(ngModel)]=fname>
+<div *ngFor="let item of mylst | searchfilter:'fname':fname">
+    <span>
+        <h4>{{item.fname+ " "+ item.lname}}</h4>
+    </span>
+
+</div>

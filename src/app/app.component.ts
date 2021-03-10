@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataServiceGenService } from './data-service-gen.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-dream-app';
+    title = 'my-dream-app';
+    dataSources;
+    btnClick = ""
+    constructor(dataServiceGenService: DataServiceGenService) {
+        this.dataSources = dataServiceGenService.getSourcedata();
+    }
+    onclickFun() {
+        this.btnClick = "Hello World";
+    }
+    eventFun(value:any) {
+        console.log(value)
+    }
+
 }

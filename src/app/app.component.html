@@ -1,4 +1,4 @@
-<ol>
+<!-- <ol>
   <li *ngFor="let dataSource of dataSources">
     <h2>{{ dataSource}}</h2>
   </li>
@@ -8,5 +8,70 @@
     <ng-container class="header">Input Sample in the Compoment</ng-container>
     <ng-container class="tail">Thank for usign in the Compoment</ng-container>
 </app-sample-input>
-<button (click)="onclickFun()">CLICK ME!</button>
+<button (click)="onclickFun()">CLICK ME!</button> -->
 <!-- <app-hello-world-component></app-hello-world-component> -->
+<!-- <div *ngIf="employeesList.length < 1; then noList; else showList"></div>
+<ng-template #showList>
+    <ul>
+        <li *ngFor="let employee of employeesList; index as i; trackBy:trackEmployee" class="active">
+            <h3>{{i}}-> {{employee.name}}+" "+{{employee.title}}</h3>
+        </li>
+    </ul>
+</ng-template>
+<ng-template #noList>
+    {{emptymsg}}
+</ng-template>
+
+<button (click)="onclcikFunction()">
+    Refresh
+</button> -->
+<!-- <div class="header">
+  <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-row">
+      <label for="userName">Username*:</label>
+      <input
+        type="text"
+        ngModel
+        #username="ngModel"
+        name="username"
+        id="username"
+        class="input-control"
+        minlength="5"
+        required
+        placeholder="Username"
+      />
+    </div>
+    <div *ngIf="!username.valid && username.touched">
+      <div *ngIf="username.errors?.required" class="error-msg">
+        This field is required
+      </div>
+      <div *ngIf="username.errors?.minlength" class="error-msg">
+        The minimum legth should be 5 chars.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="password">Password*:</label>
+      <input
+        type="password"
+        ngModel
+        #password="ngModel"
+        name="password"
+        id="password"
+        class="input-control"
+        required
+        placeholder="Password"
+        pattern = "^.*(?=.{7,})(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%*&+()]).*$"
+      />
+    </div>
+    <div *ngIf="!password.valid && password.touched">
+        <div *ngIf="password.errors?.pattern" class="error-msg">
+          Your password atleast one caps letter, one special character and one number.
+        </div>
+    </div>
+    <div >
+        <button class="form-row1" type="submit" [disabled] = "!f.valid"> Submit</button>
+    </div>
+  </form>
+</div> -->
+<app-signup-form></app-signup-form>

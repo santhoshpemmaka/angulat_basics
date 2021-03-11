@@ -1,16 +1,12 @@
-/* .active{
-    background-color: lightblue;
-} */
-
 .header{
     display: flex;
     justify-content: center;
     background-color: #17a2b8!important;
+    flex-direction: column;
 }
-/* .form1{
-
-    background-color: #17a2b8!important;
-} */
+.header1{
+    text-align: center;
+}
 .form-row {
     padding: 10px 0;
     width: 400px;

@@ -1,0 +1,84 @@
+<div class="header">
+    <div class="header1">
+        <h1>Sign-un Form</h1>
+    </div>
+    <div class="header1">
+    <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-row">
+        <label for="userName">Email* :</label>
+        <input
+          type="text"
+          ngModel
+          #username="ngModel"
+          name="username"
+          id="username"
+          class="input-control"
+          minlength="5"
+          required
+          placeholder="Email"
+        />
+      </div>
+      
+      <div class="form-row">
+        <label for="userName">Username* :</label>
+        <input
+          type="text"
+          ngModel
+          #username="ngModel"
+          name="username"
+          id="username"
+          class="input-control"
+          minlength="5"
+          required
+          placeholder="Username"
+        />
+      </div>
+      <div *ngIf="!username.valid && username.touched">
+        <div *ngIf="username.errors?.required" class="error-msg">
+          This field is required
+        </div>
+        <div *ngIf="username.errors?.minlength" class="error-msg">
+          The minimum legth should be 5 chars.
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <label for="password">Password*:</label>
+        <input
+          type="password"
+          ngModel
+          #password="ngModel"
+          name="password"
+          id="password"
+          class="input-control"
+          required
+          placeholder="Password"
+          pattern = "^.*(?=.{7,})(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%*&+()]).*$"
+        />
+      </div>
+      <div *ngIf="!password.valid && password.touched">
+          <div *ngIf="password.errors?.pattern" class="error-msg">
+            Your password atleast one caps letter, one special character and one number.
+          </div>
+      </div>
+      <div class="form-row">
+        <label for="password">Re-enter Password*:</label>
+        <input
+          type="password"
+          ngModel
+          #password="ngModel"
+          name="password"
+          id="password"
+          class="input-control"
+          required
+          placeholder="Password"
+          pattern = "^.*(?=.{7,})(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%*&+()]).*$"
+        />
+      </div>
+
+      <div >
+          <button class="form-row1" type="submit" [disabled] = "!f.valid"> Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
